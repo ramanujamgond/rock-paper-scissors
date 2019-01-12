@@ -1,0 +1,19 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Game::Rock Paper Scissors</title>
+</head>
+<body> -->
+	<script>
+		function computerPlay() {
+			let randomValue;
+			let gameValue = ['rock', 'paper', 'scissors'];
+			for (let i = 1; i <= gameValue.length; i++) {
+				randomValue = Math.floor(Math.random() * i);
+			}
+			return gameValue[randomValue];
+		}
+	</script>
+<!-- </body>
+</html> -->
