@@ -15,57 +15,82 @@
 			return gameValue[randomValue];
 		}
 
-		function playRound(playerSelection, computerSelection) {
-			if (playerSelection === 'rock') {
-				switch (computerSelection) {
-					case 'scissor':
-					console.log(`You Won! ${playerSelection} beats ${computerSelection}`);
-					break;
+		function rock() {
+			switch (computerSelection) {
+				case 'scissor':
+				console.log(`You Won! ${playerSelection} beats ${computerSelection}`);
+				break;
 
-					case 'paper':
-					console.log(`You loose ${computerSelection} beats ${playerSelection}`);
-					break;
+				case 'paper':
+				console.log(`You loose ${computerSelection} beats ${playerSelection}`);
+				break;
 
-					case 'rock':
-					console.log('Game tied both gotrock');
-					break;
-				}
-			} else if (playerSelection === 'paper') {
-				switch (computerSelection) {
-					case 'rock':
-					console.log(`You Won! ${playerSelection} beats ${computerSelection}`);
-					break;
-
-					case 'scissor':
-					console.log(`You loose ${computerSelection} beats ${playerSelection}`);
-					break;
-
-					case 'paper':
-					console.log('Game tied both got paper');
-					break;
-				}
-			} else if (playerSelection === 'scissor') {
-				switch (computerSelection) {
-					case 'paper':
-					console.log(`You Won! ${playerSelection} beats ${computerSelection}`);
-					break;
-
-					case 'rock':
-					console.log(`You loose ${computerSelection} beats ${playerSelection}`);
-					break;
-
-					case 'scissor':
-					console.log('Game tied both got scissor');
-				}
-			} else {
-				console.log(`Invalid input, match not found for ${playerSelection}`);
+				case 'rock':
+				console.log('Game tied both gotrock');
+				break;
 			}
 		}
 
-		let playerSelection = prompt('Type rock, paper or scissor');
-		playerSelection = playerSelection.toLowerCase();
-		const computerSelection = computerPlay();
-		console.log(playRound(playerSelection, computerSelection));
+		function paper() {
+			switch (computerSelection) {
+				case 'rock':
+				console.log(`You Won! ${playerSelection} beats ${computerSelection}`);
+				break;
+
+				case 'scissor':
+				console.log(`You loose ${computerSelection} beats ${playerSelection}`);
+				break;
+
+				case 'paper':
+				console.log('Game tied both got paper');
+				break;
+			}
+		}
+
+		function scissor() {
+			switch (computerSelection) {
+				case 'paper':
+				console.log(`You Won! ${playerSelection} beats ${computerSelection}`);
+				break;
+
+				case 'rock':
+				console.log(`You loose ${computerSelection} beats ${playerSelection}`);
+				break;
+
+				case 'scissor':
+				console.log('Game tied both got scissor');
+				break;
+			}
+		}
+
+		function game() {
+			let playerScore = 0;
+			let computerScore = 0;
+			let round = 0;
+
+			while(round < 5) {
+				let playerSelection = prompt('Type rock, paper or scissor');
+				playerSelection = playerSelection.toLowerCase();
+				const computerSelection = computerPlay();
+				console.log(playRound(playerSelection, computerSelection));
+				
+				function playRound(playerSelection, computerSelection) {
+					if (playerSelection === 'rock') {
+						rock();
+					} else if (playerSelection === 'paper') {
+						paper();
+					} else if (playerSelection === 'scissor') {
+						scissor();
+					} else {
+						console.log(`Invalid input, match not found for ${playerSelection}`);
+					}
+				}
+			}
+			round++;
+		}
+
+		game();
+
 	</script>
 </body>
 </html>
