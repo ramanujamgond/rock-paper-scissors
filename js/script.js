@@ -104,6 +104,9 @@ function playRound(playerSelection, computerSelection) {
 
 // game 
 function game() {
+	playerScore = 0;
+	computerScore = 0;
+	round = 0;
 
 	// run the game for 5 rounds
 	while(round < 5) {
@@ -128,15 +131,14 @@ function game() {
 	} else {
 		console.log('Match Drawn!');
 	}
-	return 0;
+	console.log('\n');
 }
 
 // initial variable setup
 let playerSelection, computerSelection;
 
-let playerScore = 0;
-let computerScore = 0;
-let round = 0;
+let playerScore, computerScore;
+let round;
 
 // call to game function
 // game();
