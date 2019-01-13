@@ -134,6 +134,11 @@ function game() {
 	console.log('\n');
 }
 
+// refresh function
+function refresh() {
+	window.location.reload();
+}
+
 // initial variable setup
 let playerSelection, computerSelection;
 
